@@ -33,7 +33,7 @@ def check():
             location.find_element(By.CLASS_NAME, "btn-secondary").click()
             timeslot_grid: list = driver.find_elements(By.ID, "timeslots")
             fill_form(timeslot_grid)
-            break
+            return
 
 
 def fill_form(timeslot_grid):
