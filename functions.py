@@ -20,7 +20,12 @@ def check():
         if location.find_element(By.CSS_SELECTOR, "div[id^='dateText']").text != "No Appointments Available":
             appt_date_1 = location.find_element(By.CSS_SELECTOR,"div[id^='dateText']").text.split("\n")[1].lstrip("Next Available: ")
             appt_date = datetime.strptime(appt_date_1,"%m/%d/%Y %I:%M %p") # "MM/DD/YYYY HH:MM AM"
-            if location.find_element(By.CLASS_NAME,"AppointcardHeader").text in full_location_name and appt_date.year == constants.acceptable_year and appt_date.month in constants.acceptable_month and appt_date.weekday() in constants.acceptable_weekday and appt_date.hour in constants.acceptable_hour:
+            if 
+            location.find_element(By.CLASS_NAME,"AppointcardHeader").text in full_location_name and
+            appt_date.year == constants.acceptable_year and
+            appt_date.month in constants.acceptable_month and
+            appt_date.weekday() in constants.acceptable_weekday and
+            appt_date.hour in constants.acceptable_hour:
                 location.find_element(By.CLASS_NAME, "btn-secondary").click()
                 timeslot_grid: list = driver.find_elements(By.ID, "timeslots")
                 fill_form(timeslot_grid)
